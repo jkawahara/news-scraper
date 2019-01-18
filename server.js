@@ -40,6 +40,12 @@ app.get("/scrape", (req, res) => {
     $("div.dataSection h2").each(function(i, element) {
       // Structure result from elements within dataSection class div as object with following keys: title (text of <a> child of <h2>), summary (snippet class <div> which is next sibling of <h2>) and link (href of <a> child of <h2>)
       const result = {};
+      debugger;
+      result.date = $(this)
+        .parents(".dataSection")
+        .children()
+        .first()
+        .text();
       result.title = $(this)
         .children("a")
         .text();
@@ -51,7 +57,7 @@ app.get("/scrape", (req, res) => {
         $(this)
           .children("a")
           .attr("href");
-
+      console.log(result);
       // Create new entry in Article collection with result
       db.Article.create(result)
         .then(dbArticle => {
@@ -63,7 +69,6 @@ app.get("/scrape", (req, res) => {
           console.log(error);
         });
     });
-
     // Send message to client
     res.send("Scrape Complete");
   });

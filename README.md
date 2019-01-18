@@ -64,18 +64,22 @@
           * [body-parser](https://www.npmjs.com/package/body-parser)
           * [cheerio](https://www.npmjs.com/package/cheerio)
           * [request](https://www.npmjs.com/package/request)
+          * [morgan](https://www.npmjs.com/package/morgan)
     * Client-side: HTML, CSS, JavaScript
     * Cloud: [Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs) with [mLab MongoDB](https://devcenter.heroku.com/articles/mongolab)
   * Installing:
     * For further development or use of this application, clone or download application files from GitHub, which is organized into the following directory structure:
       * /news-scraper (application root directory level)
         * /models
-          * TBD
+          * Article.js
           * index.js
+          * Note.js
         * /node_modules (ignored by git) - generated first time npm install executes
         * /public
           * app.js
           * index.html
+        * .eslintignore
+        * .eslintrc.json
         * .gitignore
         * LICENSE
         * package-lock.json
