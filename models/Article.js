@@ -4,6 +4,10 @@ const mongoose = require("mongoose");
 // Set reference to Schema constructor and create new Article schema object
 const Schema = mongoose.Schema;
 const ArticleSchema = new Schema({
+  date: {
+    type: String,
+    required: true
+  },
   title: {
     type: String,
     required: true
