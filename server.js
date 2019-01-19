@@ -37,12 +37,14 @@ app.set("view engine", "handlebars");
 
 // GET method to render home page
 app.get("/", (req, res) => {
-  db.Article.find({}).then(dbArticle => {
-    var hbsObject = {
-      articles: dbArticle
-    };
-    res.render("index", hbsObject);
-  });
+  db.Article.find({})
+    .sort({ title: 1 })
+    .then(dbArticle => {
+      var hbsObject = {
+        articles: dbArticle
+      };
+      res.render("index", hbsObject);
+    });
 });
 
 // GET method to scrape website with AXIOS call
@@ -92,6 +94,7 @@ app.get("/scrape", (req, res) => {
 app.get("/articles", (req, res) => {
   // Find all articles in collection
   db.Article.find({})
+    .sort({ title: 1 })
     .then(dbArticle => {
       // Respond with articles to client
       res.json(dbArticle);
