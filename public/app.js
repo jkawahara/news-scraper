@@ -1,25 +1,17 @@
-// GET JSON method
-$.getJSON("/articles", data => {
-  // Structure each article with ID, title, summary and link
-  for (let i = 0; i < data.length; i++) {
-    $("#articles").append(
-      "<p data-id='" +
-        data[i]._id +
-        "'>" +
-        data[i].date +
-        "<br />" +
-        data[i].title +
-        "<br />" +
-        data[i].summary +
-        "<br />" +
-        data[i].link +
-        "</p>"
-    );
-  }
-});
+// List for click on .scrape-new button
+// $(document).on("click", "a.scrape-new", function() {
+//   $("#articles").empty();
+//   // GET method for scraping
+//   $.ajax({
+//     method: "GET",
+//     url: "/scrape"
+//   }).then(data => {
+//     res.render("index");
+//   });
+// });
 
 // Listen for click on <p>
-$(document).on("click", "p", function() {
+$(document).on("click", "a.comment", function() {
   $("#notes").empty();
   // Select Article id
   let thisId = $(this).attr("data-id");
@@ -31,10 +23,14 @@ $(document).on("click", "p", function() {
   })
     // Structure note fields with title and body, identified with Article ID, with a save button
     .then(data => {
-      console.log(data);
-      $("#notes").append("<h2>" + data.title + "</h2>");
-      $("#notes").append("<input id='titleinput' name='title' >");
-      $("#notes").append("<textarea id='bodyinput' name='body'></textarea>");
+      $("#notes").append("<h5>" + data.title + "</h2>");
+      $("#notes").append("<p>Comment Title:</p>");
+      $("#notes").append("<input id='titleinput' name='title' size='60'>");
+      $("#notes").append("<p>Comment Body:</p>");
+      $("#notes").append(
+        "<textarea id='bodyinput' name='body' style='width:495px; height: 55px'></textarea>"
+      );
+      $("#notes").append("<br>");
       $("#notes").append(
         "<button data-id='" + data._id + "' id='savenote'>Save Note</button>"
       );

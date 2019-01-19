@@ -20,33 +20,19 @@
   * Design Description
     * Application Setup (server.js)
       * Configure Express web app framework listening on process.env.PORT (Heroku) or default to 3000. Parse URL encoded, any type including nested objects, and JSON and call appropriate routing.
-      * Required modules: npm (dotenv, express, express-handlebars), path
-      * Relevant functions: require(), use(), engine(), set(), sync(), listen()
-      * Export: app
-    * Database Setup (schema.sql, seeds.sql TBD)
-      * Create pawstagram_db database
-      * Available Seed with TBD
-    * Configuration Definition (config.json)
-      * Define configuration object with nested development, test and production environments
-    * Model Setup (/models, index.js)
-      * Define Sequelize version of Community, User, Pet, PetPhoto, PhotoPost objects including associations
-      * TBD Configure connection to MySQL configuration
-      * TBD Include connection conditional to enable MySQL with Heroku deployment using JawsDB add-on
-      * Required modules: fs, path, sequelize, config.json
-      * Relevant functions: require(), readdirSync(), filter(), forEach(), import(), join(), keys(), associate(), exports(), define(), belongsToMany(), hasMany(), belongsTo()
-      * Export: db, Community, Pet, PetPhoto, PhotoPost, User
-    * Controller Setup (apiRoutes.js, htmlRoutes.js)
       * Assign routing views <-> model <-> DB as HTTP methods <-> CRUD operations <-> SQL
         * POST <-> Create <-> INSERT
         * GET <-> Read <-> SELECT
-        * PUT <-> Update <-> UPDATE
-        * DELETE <-> Delete <-> DELETE
-      * Required modules: /models, path
-      * Relevant functions: require(), exports(), get(), findAll(), findOne(), post(), create(), put(), update(), delete(), destroy(), sendFile(), render()
-      * Export: router, function(app) {}
-    * View Setup (server-side: /layout/main.handlebars, /layout/partials/*.handlebars, *.handlebars, client-side: home-page, login-page, signup-page)
-      * Render statically HTML pages on the client-side within /public.
-      * Use Handlebars.js as web templating system with HTML pages leveraging main.handlebars layout and various *.handlebars partials.  
+      * Required modules: npm (dotenv, express, express-handlebars), path
+      * Relevant functions: require(), use(), connect(), engine(), set(), get(), find(), catch(), send(), findOne(), populate(), post(), create(), findOneAndUpdate(), sync(), listen()
+      * Export: N/A
+    * Model Setup (/models, index.js, Article.js, Note.js)
+      * Define Mongoose version of Article, Note including associations
+      * Required modules: mongoose
+      * Relevant functions: require(), model(), exports()
+      * Export: Article, Note
+    * View Setup (server-side: /layout/main.handlebars, /layout/partials/*.handlebars, *.handlebars, client-side: N/A)
+      * Use Handlebars.js as web templating system with HTML pages leveraging main.handlebars layout and various *.handlebars partials
   * Prerequisites for Development:
     * MacBook Air (Intel Core i7, 2.2 GHz, 1 Processor, 2 Cores, 8GB)
     * 64 bit operating system 

@@ -41,7 +41,6 @@ app.get("/", (req, res) => {
     var hbsObject = {
       articles: dbArticle
     };
-    console.log(hbsObject);
     res.render("index", hbsObject);
   });
 });
@@ -73,7 +72,6 @@ app.get("/scrape", (req, res) => {
         $(this)
           .children("a")
           .attr("href");
-      console.log(result);
       // Create new entry in Article collection with result
       db.Article.create(result)
         .then(dbArticle => {
