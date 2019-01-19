@@ -57,7 +57,6 @@ app.get("/scrape", (req, res) => {
     $("div.dataSection h2").each(function(i, element) {
       // Structure result from elements within dataSection class div as object with following keys: title (text of <a> child of <h2>), summary (snippet class <div> which is next sibling of <h2>) and link (href of <a> child of <h2>)
       const result = {};
-      debugger;
       result.date = $(this)
         .parents(".dataSection")
         .children()
