@@ -1,14 +1,14 @@
 // List for click on .scrape-new button
-// $(document).on("click", "a.scrape-new", function() {
-//   $("#articles").empty();
-//   // GET method for scraping
-//   $.ajax({
-//     method: "GET",
-//     url: "/scrape"
-//   }).then(data => {
-//     res.render("index");
-//   });
-// });
+$(document).on("click", "a.scrape-new", function() {
+  $("#articles").empty();
+  // GET method for scraping
+  $.ajax({
+    method: "GET",
+    url: "/scrape"
+  }).then(() => {
+    location.reload();
+  });
+});
 
 // Listen for click on <p>
 $(document).on("click", "a.comment", function() {
