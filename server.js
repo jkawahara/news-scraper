@@ -1,5 +1,6 @@
 // *** Include Modules: npm (express, morgan, mongoose, axios, cheerio), /models
 const express = require("express");
+const exphbs = require("express-handlebars");
 const logger = require("morgan");
 const mongoose = require("mongoose");
 const axios = require("axios");
@@ -30,6 +31,20 @@ mongoose.connect(
 );
 
 // *** Routes
+// Handlebars
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
+
+// GET method to render home page
+app.get("/", (req, res) => {
+  db.Article.find({}).then(dbArticle => {
+    var hbsObject = {
+      articles: dbArticle
+    };
+    res.render("index", hbsObject);
+  });
+});
+
 // GET method to scrape website with AXIOS call
 app.get("/scrape", (req, res) => {
   axios.get("http://www.astronomy.com/news").then(response => {

@@ -6,6 +6,8 @@ $.getJSON("/articles", data => {
       "<p data-id='" +
         data[i]._id +
         "'>" +
+        data[i].date +
+        "<br />" +
         data[i].title +
         "<br />" +
         data[i].summary +
