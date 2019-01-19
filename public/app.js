@@ -25,10 +25,10 @@ $(document).on("click", "a.comment", function() {
     .then(data => {
       $("#notes").append("<h5>" + data.title + "</h2>");
       $("#notes").append("<p>Comment Title:</p>");
-      $("#notes").append("<input id='titleinput' name='title' size='60'>");
+      $("#notes").append("<input id='titleinput' name='title' size='35'>");
       $("#notes").append("<p>Comment Body:</p>");
       $("#notes").append(
-        "<textarea id='bodyinput' name='body' style='width:495px; height: 55px'></textarea>"
+        "<textarea id='bodyinput' name='body' style='width: 315px; height: 55px'></textarea>"
       );
       $("#notes").append("<br>");
       $("#notes").append(
