@@ -73,16 +73,20 @@ app.get("/scrape", (req, res) => {
         $(this)
           .children("a")
           .attr("href");
-      // Create new entry in Article collection with result
-      db.Article.create(result)
-        .then(dbArticle => {
-          // Log to console
-          console.log(dbArticle);
-        })
-        .catch(error => {
-          // Log any errors
-          console.log(error);
-        });
+      // Create new entry in Article collection with result if doesn't already exist
+      db.Article.find({ title: result.title }, (err, docs) => {
+        if (docs.length === 0) {
+          db.Article.create(result)
+            .then(dbArticle => {
+              // Log to console
+              console.log(dbArticle);
+            })
+            .catch(error => {
+              // Log any errors
+              console.log(error);
+            });
+        }
+      });
     });
     // Send message to client
     res.send("Scrape Complete");
