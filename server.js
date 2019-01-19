@@ -41,6 +41,7 @@ app.get("/", (req, res) => {
     var hbsObject = {
       articles: dbArticle
     };
+    console.log(hbsObject);
     res.render("index", hbsObject);
   });
 });
