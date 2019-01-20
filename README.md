@@ -23,7 +23,7 @@
       * Assign routing views <-> model <-> DB as HTTP methods <-> CRUD operations <-> SQL
         * POST <-> Create <-> INSERT
         * GET <-> Read <-> SELECT
-      * Required modules: npm (dotenv, express, express-handlebars), path
+      * Required modules: npm (express, express-handlebars, morgan, mongoose, axios, cheerio), /models
       * Relevant functions: require(), use(), connect(), engine(), set(), get(), find(), catch(), send(), findOne(), populate(), post(), create(), findOneAndUpdate(), sync(), listen()
       * Export: N/A
     * Model Setup (/models, index.js, Article.js, Note.js)
@@ -62,8 +62,16 @@
           * Note.js
         * /node_modules (ignored by git) - generated first time npm install executes
         * /public
+          * andromeda.png
           * app.js
-          * index.html
+        * /views
+          * /layouts
+            * main.handlebars
+          * /partials
+            * article-block.handlebars
+            * footer-block.handlebars
+            * nav-block.handlebars
+          * index.handlebars
         * .eslintignore
         * .eslintrc.json
         * .gitignore
