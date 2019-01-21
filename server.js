@@ -74,17 +74,12 @@ app.get("/scrape", (req, res) => {
           .children("a")
           .attr("href");
       // Create new entry in Article collection with result if doesn't already exist
-      db.Article.find({ title: result.title }, (err, docs) => {
-        if (docs.length === 0) {
-          db.Article.create(result)
-            .then(dbArticle => {
-              // Log to console
-              console.log(dbArticle);
-            })
-            .catch(error => {
-              // Log any errors
-              console.log(error);
-            });
+      db.Article.find({ title: result.title }, (req, res) => {
+        if (res.length === 0) {
+          db.Article.create(result);
+          console.log("Article saved to DB");
+        } else {
+          console.log("Article previously saved to DB");
         }
       });
     });

@@ -10,7 +10,7 @@ $(document).on("click", "a.scrape-new", function() {
   });
 });
 
-// Listen for click on <p>
+// Listen for click on a.comment button
 $(document).on("click", "a.comment", function() {
   $("#notes").empty();
   // Select Article id
