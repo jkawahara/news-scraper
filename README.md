@@ -21,8 +21,8 @@
     * Application Setup (server.js)
       * Configure Express web app framework listening on process.env.PORT (Heroku) or default to 3000. Parse URL encoded, any type including nested objects, and JSON and call appropriate routing.
       * Assign routing views <-> model <-> DB as HTTP methods <-> CRUD operations <-> SQL
-        * POST <-> Create <-> INSERT
-        * GET <-> Read <-> SELECT
+        * POST <-> Create <-> insert
+        * GET <-> Read <-> find
       * Required modules: npm (express, express-handlebars, morgan, mongoose, axios, cheerio), /models
       * Relevant functions: require(), use(), connect(), engine(), set(), get(), find(), catch(), send(), findOne(), populate(), post(), create(), findOneAndUpdate(), sync(), listen()
       * Export: N/A
