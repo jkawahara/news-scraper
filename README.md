@@ -1,7 +1,5 @@
 # [News Scraper](https://bcbc-news-scraper.herokuapp.com/)
 ### 1. Why / Background
-  * This is Berkeley Coding Boot Camp (BCBC) week 10 homework assignment.
-    * The BCBC curriculum generally focuses on JavaScript along with HTML/CSS, using the MERN (MongoDB, Express, React, Node) software stack, to teach web development skills across the client and server. 
   * News Scraper is a web app that enable users to view and leave comments on the latest news.
  ### 2. What / Objectives / User Stories
   * From design through deployment of the application, this project used the following web development technologies:
@@ -95,4 +93,4 @@
  ## License
   * This project is licensed under the [MIT License](LICENSE).
  ## Acknowledgments
-  * Thanks to BCBC program personnel, especially our instructor, David Hallinan, along with our TAs, Hannah Bowers and Glo Austin, for their guidance and support.
+  * Thanks to David Hallinan, Hannah Bowers and Glo Austin for their guidance and support.
