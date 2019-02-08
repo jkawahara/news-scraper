@@ -1,4 +1,4 @@
-# [News Scraper](https://bcbc-news-scraper.herokuapp.com/)
+# Live Link to [News Scraper](https://bcbc-news-scraper.herokuapp.com/)
 ### 1. Why / Background
   * News Scraper is a web app that enable users to view and leave comments on the latest news.
  ### 2. What / Objectives / User Stories
@@ -15,12 +15,16 @@
     * Projects: Kanban board for documenting user stories and overall progress
     * Issues: Issue tracking for user stories, features and bug report
   * Functionality - refer to [video of application user flow](https://drive.google.com/drive/folders/1PWeVaiAW64v2gYkkCKrSqTRhJEE6nBCx?usp=sharing):
+    * Wireframe
+      * News Scraper ![newsscraper.png](public/readmelinks/newsscraper.png "newsscraper")
+      * JSON Resources
+        * Articles ![jsonarticles.png](public/readmelinks/jsonarticles.png "jsonarticles")
   * Design Description
     * Application Setup (server.js)
       * Configure Express web app framework listening on process.env.PORT (Heroku) or default to 3000. Parse URL encoded, any type including nested objects, and JSON and call appropriate routing.
       * Assign routing views <-> model <-> DB as HTTP methods <-> CRUD operations <-> SQL
-        * POST <-> Create <-> INSERT
-        * GET <-> Read <-> SELECT
+        * POST <-> Create <-> insert
+        * GET <-> Read <-> find
       * Required modules: npm (express, express-handlebars, morgan, mongoose, axios, cheerio), /models
       * Relevant functions: require(), use(), connect(), engine(), set(), get(), find(), catch(), send(), findOne(), populate(), post(), create(), findOneAndUpdate(), sync(), listen()
       * Export: N/A
